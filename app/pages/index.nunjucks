@@ -1,0 +1,23 @@
+<!-- index.nunjucks -->
+{% extends "layout.nunjucks" %}
+
+{% block content %} 
+  <!-- Adds the navigation partial -->
+  {% include "partials/navigation.nunjucks" %}  
+  <!-- Adds the navigation macro -->
+  {% import 'macros/nav-macro.nunjucks' as nav %}
+  {{nav.active('home')}}
+
+  <div id="particles">
+    <h1>Blaat</h1>
+  </div>
+  
+  <div class="gallery">
+    <!-- Loops through "images" array -->
+    {% for image in images %}
+    <div class="gallery__item">
+      <img src="{{image.src}}" alt="{{image.alt}}">
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
